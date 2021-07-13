@@ -30,6 +30,13 @@ public class FlowBean implements Writable {
         this.sumFlow = upFlow + downFlow;
     }
 
+    public long getUpFlow() {
+        return upFlow;
+    }
+
+    public long getDownFlow() {
+        return downFlow;
+    }
 
     /**
      * 序列化
