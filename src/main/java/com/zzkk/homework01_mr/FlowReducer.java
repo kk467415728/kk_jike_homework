@@ -1,4 +1,4 @@
-package com.zzkk.homework01;
+package com.zzkk.homework01_mr;
 
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;

@@ -1,4 +1,4 @@
-package com.zzkk.homework01;
+package com.zzkk.homework01_mr;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -15,7 +15,7 @@ public class FlowDriver {
         Configuration conf = new Configuration();
         Job job = Job.getInstance(conf);
 
-        job.setJarByClass(FlowBean.class);
+        job.setJarByClass(FlowDriver.class);
 
         job.setMapperClass(FlowMapper.class);
         job.setReducerClass(FlowReducer.class);
@@ -26,8 +26,10 @@ public class FlowDriver {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(FlowBean.class);
 
-        FileInputFormat.setInputPaths(job, new Path(args[0]));
-        FileOutputFormat.setOutputPath(job, new Path(args[1]));
+//        FileInputFormat.setInputPaths(job, new Path(args[0]));
+//        FileOutputFormat.setOutputPath(job, new Path(args[1]));
+        FileInputFormat.setInputPaths(job, new Path("D:\\input\\HTTP_20130313143750.dat"));
+        FileOutputFormat.setOutputPath(job, new Path("D:\\output"));
 
         boolean result = job.waitForCompletion(true);
         System.exit(result? 0 : 1);
