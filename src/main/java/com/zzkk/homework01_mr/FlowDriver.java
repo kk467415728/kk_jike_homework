@@ -29,7 +29,7 @@ public class FlowDriver {
 //        FileInputFormat.setInputPaths(job, new Path(args[0]));
 //        FileOutputFormat.setOutputPath(job, new Path(args[1]));
         FileInputFormat.setInputPaths(job, new Path("D:\\input\\HTTP_20130313143750.dat"));
-        FileOutputFormat.setOutputPath(job, new Path("D:\\output"));
+        FileOutputFormat.setOutputPath(job, new Path("D:\\output2"));
 
         boolean result = job.waitForCompletion(true);
         System.exit(result? 0 : 1);
