@@ -5,4 +5,4 @@
 [代码](/src/main/scala/com/zzkk/spark/homework01/InvertedIndex.scala)
 
 结果截图
-![结果截图](/images/04-spark/1.png)
+![结果截图](/images/04-spark/result01.png)
