@@ -23,7 +23,7 @@ object InvertedIndex {
 
     //调整RDD结构（word,(filename, count)）
     val resultRDD: RDD[(String, Iterable[(String, Int)])] = wcRDD.map(x => (x._1.split("-").head, (x._1.split("-").last, x._2)))
-      .groupByKey()
+      .groupByKey().sortBy(_._1)
 
     //格式化输出
     resultRDD.collect.foreach(x => println(s"${x._1}: {${x._2.toList.mkString(",")}}"))
