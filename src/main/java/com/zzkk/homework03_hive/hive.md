@@ -11,14 +11,15 @@ group by u.age;
 第一题截图![img](/images/03-hive/1.png)
 ### 2 找出男性评分最高且评分次数超过50次的10部电影男性评分最高的十部：
 ~~~
-select m.moviename,avg(r.rate),count(*) count
+select u.sex as sex,m.moviename as name, avg(r.rate) as average,count(*) total
 from t_rating as r
 left join t_movie as m on r.movieid= m.movieid
 left join t_user as u on r.userid = u.userid
-where u.sex = 'M' and count >50
-group by m.moviename
+where u.sex = 'M'
+group by u.sex,m.moviename
+having total > 50
 order by average desc
-limit 30;
+limit 10;
 ~~~
 第二题截图![img](/images/03-hive/2.png)
 
